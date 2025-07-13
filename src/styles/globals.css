@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --surface-light: #FAFAFA;
+    --surface-dark: #0A0A0A;
+    --canvas-light: #FFFFFF;
+    --canvas-dark: #111111;
+    --primary: #4C6EF5;
+    --secondary: #7950F2;
+    --accent: #12B886;
+    --text-primary-light: #1A1A1A;
+    --text-primary-dark: #FAFAFA;
+    --text-secondary-light: #6B7280;
+    --text-secondary-dark: #9CA3AF;
+    --border-light: #E5E7EB;
+    --border-dark: #1F2937;
+  }
+
+  * {
+    @apply border-border-light dark:border-border-dark;
+  }
+
+  body {
+    @apply bg-surface-light dark:bg-surface-dark text-text-primary-light dark:text-text-primary-dark;
+    @apply font-sans antialiased;
+  }
+
+  ::selection {
+    @apply bg-primary/20 text-primary;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border-light dark:bg-border-dark rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-text-secondary-light dark:bg-text-secondary-dark;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply backdrop-blur-xl bg-white/80 dark:bg-black/40;
+  }
+
+  .gradient-calm {
+    @apply bg-gradient-to-br from-indigo-100 to-indigo-200 dark:from-indigo-900/20 dark:to-indigo-800/20;
+  }
+
+  .gradient-energized {
+    @apply bg-gradient-to-br from-red-100 to-red-200 dark:from-red-900/20 dark:to-red-800/20;
+  }
+
+  .gradient-balanced {
+    @apply bg-gradient-to-br from-emerald-100 to-emerald-200 dark:from-emerald-900/20 dark:to-emerald-800/20;
+  }
+
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-primary/20 focus:ring-offset-2 focus:ring-offset-transparent;
+  }
+
+  .animate-in {
+    animation: fade-in 0.2s ease-out, slide-up 0.2s ease-out;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}

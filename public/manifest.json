@@ -1,0 +1,27 @@
+{
+  "name": "AI Therapy - Digital Wellness Companion",
+  "short_name": "AI Therapy",
+  "description": "Your personal AI-powered therapist for mental wellness support",
+  "icons": [
+    {
+      "src": "/icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#4C6EF5",
+  "background_color": "#FAFAFA",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "orientation": "portrait",
+  "categories": ["health", "medical", "lifestyle"],
+  "prefer_related_applications": false
+}
