@@ -23,9 +23,9 @@ export default function TherapistPresence() {
   };
 
   return (
-    <div className="relative">
-      <div className="glass flex h-32 w-32 animate-breathe items-center justify-center rounded-full bg-gradient-to-br from-primary/20 to-secondary/20">
-        <div className="h-24 w-24 rounded-full bg-gradient-to-br from-primary to-secondary opacity-80" />
+    <div data-testid="therapist-presence" role="status" aria-label="Therapist presence indicator" className="relative">
+      <div data-testid="therapist-avatar" className="glass flex h-32 w-32 animate-breathe items-center justify-center rounded-full bg-gradient-to-br from-primary/20 to-secondary/20">
+        <div data-testid="pulse-indicator" className="h-24 w-24 rounded-full bg-gradient-to-br from-primary to-secondary opacity-80" />
       </div>
 
       {[0, 120, 240].map((offset, i) => {
@@ -46,7 +46,7 @@ export default function TherapistPresence() {
       })}
 
       <div className="absolute -inset-10 flex items-center justify-center">
-        <p className="mt-40 text-center text-sm text-text-secondary-light dark:text-text-secondary-dark">
+        <p data-testid="therapist-text" className="mt-40 text-center text-sm text-text-secondary-light dark:text-text-secondary-dark">
           Hi, I&apos;m here to listen and support you
         </p>
       </div>

@@ -15,6 +15,7 @@ export default function MessageBubble({ message }: MessageBubbleProps) {
       className={`flex ${isUser ? 'justify-end' : 'justify-start'} animate-in`}
     >
       <div
+        data-testid={`message-bubble-${message.id}`}
         className={`
           max-w-[70%] rounded-[20px] px-5 py-3 shadow-sm
           ${
@@ -24,7 +25,7 @@ export default function MessageBubble({ message }: MessageBubbleProps) {
           }
         `}
       >
-        <p className="whitespace-pre-wrap text-body">{message.content}</p>
+        <p data-testid={`message-content-${message.id}`} className="whitespace-pre-wrap text-body">{message.content}</p>
 
         {message.sources && message.sources.length > 0 && (
           <div className="mt-3 space-y-2 border-t border-white/20 pt-3">
